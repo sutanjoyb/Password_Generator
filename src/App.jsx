@@ -47,23 +47,23 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-gray-900 px-4 py-6">
+    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 px-4 py-6">
       {/* Main Content */}
       <div className="flex items-center justify-center flex-1">
-        <div className="w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl shadow-xl p-6">
+        <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-6">
           {/* Title */}
           <h1 className="text-3xl font-semibold text-white text-center mb-6">
-            🔐 Password Generator
+             Password Generator
           </h1>
 
           {/* Password Field */}
-          <div className="flex items-center bg-white rounded-xl overflow-hidden shadow-md border border-gray-300 mb-4">
+          <div className="flex items-center bg-white/20 border-white/30 backdrop-blur-md rounded-xl overflow-hidden shadow-md border mb-4">
             <input
               type="text"
               value={password}
               readOnly
               placeholder="Click generate to create password"
-              className="flex-1 px-4 py-2 text-gray-800 outline-none text-lg bg-transparent"
+              className="flex-1 px-4 py-2 text-black placeholder-gray-200 outline-none text-lg bg-transparent"
             />
 
             <button
@@ -78,19 +78,20 @@ function App() {
           {/* Controls */}
           <div className="space-y-4">
             {/* Length */}
-            <div>
-              <label className="text-sm text-gray-300 block mb-1">
-                Length: <span className="text-white">{length}</span>
-              </label>
-              <input
-                type="range"
-                min={6}
-                max={50}
-                value={length}
-                onChange={(e) => setLength(Number(e.target.value))}
-                className="w-full cursor-pointer"
-              />
-            </div>
+           <div className="flex items-center justify-between gap-4">
+  <span className="text-sm text-white min-w-[80px]">
+    Length: {length}
+  </span>
+
+  <input
+    type="range"
+    min={6}
+    max={50}
+    value={length}
+    onChange={(e) => setLength(Number(e.target.value))}
+    className="flex-1 cursor-pointer"
+  />
+</div>
 
             {/* Checkboxes */}
             <div className="flex justify-between text-sm text-gray-300">
@@ -125,7 +126,7 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="text-center text-gray-400 text-sm mt-6">
+      <footer className="text-center text-black text-sm mt-6">
         <div className="space-y-1">
           <p>&copy; 2026 Password Generator. All Rights Reserved.</p>
 
